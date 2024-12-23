@@ -1,0 +1,28 @@
+{
+    "family": "url-shortener-task",
+    "containerDefinitions": [
+      {
+        "name": "url-shortener",
+        "image": "<DOCKER_USERNAME>/url-shortener:latest",
+        "memory": 512,
+        "cpu": 256,
+        "essential": true,
+        "portMappings": [
+          {
+            "containerPort": 3000,
+            "hostPort": 3000
+          }
+        ],
+        "environment": [
+          { "name": "NODE_ENV", "value": "production" },
+          { "name": "PORT", "value": "3000" },
+          { "name": "JWT_SECRET", "value": "your_jwt_secret" },
+          { "name": "DB_HOST", "value": "mysql" },
+          { "name": "DB_USER", "value": "root" },
+          { "name": "DB_PASSWORD", "value": "rootpassword" },
+          { "name": "DB_NAME", "value": "shortener" }
+        ]
+      }
+    ]
+  }
+  
